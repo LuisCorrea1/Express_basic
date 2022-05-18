@@ -23,6 +23,12 @@ app.get('/node', (req,res) => {
     res.send([explorer, explorer1, explorer2])
 })
 
+//Query parameters, receive parameters from url
+// url localhost:3000/explorers/luis
+app.get('/explorers/:explorer',(req,res) => {
+    res.send(req.params)
+})
+
 //Initialize app
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
